@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <title>Tuning Fork</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<h1>Sound Generator</h1>
+<P style="color:red;">!Make sure your Volume level.</P>
+<form>
+<div id="input_freq">
+<label for="freq">Frequency:</label>
+<input type="number" inputmode="numeric" pattern="^([0-9]{,6})$" id="freq" name="freq" required>Hz
+
+</div>
+<button id="play" name="play" onclidk="playSound();">Play</button>
+<button id="stop" name="stop" onclick="stopSound();">Stop</button>
+</form>
+</body>
+<script>
+Window.AUdioContext = window.AudioContext || window.webkitAudioContext;
+const ctx = new AudioContext();
+let oscillator;
+// During play, true
+let isPlaying = false;
+
+function playSound(){
+    if (isPlaying) return;
+    oscillator = ctx.createOscillator();
+    oscillator.type = "sin";
+    
+    var freqText = document.getElementById("freq").value;
+    
+    var freqNumber = Number(freqText);
+         
+    oscillator.frequency.setValueAtTime(freqNumber, ctx.currentTime);
+    oscillator.connect(ctx.destination);
+    oscilator.start();
+    isPlaying = true;
+}
+
+function stopSound(){
+    oscillator?.stop();
+    isPLaying = false;
+}
+</script>
+</html>
