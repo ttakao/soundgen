@@ -15,7 +15,7 @@ function playSound() {
 
     const waveforms = waveform;
     for (var i=0; i < waveforms.length; i++){
-      if (waveforms[i].checked {
+      if (waveforms[i].checked) {
          oscillator.type = waveforms[i].value;
          console.log(oscillator.type);
          break;
