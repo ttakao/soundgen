@@ -14,9 +14,6 @@
     body{
       padding:20px;
     }
-    span{
-      display: inline-block;
-    }
   </style>
 </head>
 <body>
@@ -29,15 +26,18 @@
 </div><!-- end of row -->
 <div class="row">
   <div class="column column-20">
-     <span><label for="freq">Frequency:</label>
-       <input type="number" inputmode="numeric" min="0" id="freq" required>　Hz</span>
-  </div>
+     <label for="freq">Frequency:</label>
+     <div class="column column-10#>
+         <input type="number" inputmode="numeric" min="0" id="freq" required>
+     </div>
+     <div class="column">Hz</div>
 </div><!-- end of row -->
 <div class="row">
   <input type="radio" name="waveform" value="sine" Checked>Sine
   <input type="radio" name="waveform" value="square">Square
   <Input type="radio" name="waveform" value="triangle">Triangle
 </div><!-- end row -->
+<div class="row"><br/></div>
 <div class="row">
       <button id="play">Play</button>
       <button id="stop">Stop</button>
