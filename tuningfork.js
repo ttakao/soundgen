@@ -30,7 +30,7 @@ function playSound() {
 }
 
 function stopSound() {
-    if (isPlayng){
+    if (isPlaying){
       oscillator.stop();
       isPLaying = false;
     }
