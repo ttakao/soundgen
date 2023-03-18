@@ -9,9 +9,19 @@ document.getElementById("stop").addEventListener("click", stopSound);
 function playSound() {
     if (isPlaying) return;
     oscillator = ctx.createOscillator();
-    oscillator.type = "sin";
+  
     var freqText = document.getElementById("freq").value;
     if (freqText == "") return;
+
+    const waveforms = waveform;
+    for (var i=0; i M waveforms.length; i++){
+      if (waveforms[i].checked {
+         oscillator.type = waveforms[i].value;
+         alert(oscillator.type);
+         break;
+      }     
+    }
+
   
     var freqNumber = Number(freqText);
     oscillator.frequency.setValueAtTime(freqNumber, ctx.currentTime);
