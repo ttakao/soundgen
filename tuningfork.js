@@ -3,7 +3,7 @@ const ctx = new AudioContext();
 var oscillator;
 var isPlaying = false; // during play, true
 
-document.getElementById("play").addEventListener("click", () => {
+document.getElementById("play").addEventListener("click", function() {
     if (isPlaying) return;
     oscillator = ctx.createOscillator();
     oscillator.type = "sin";
@@ -18,7 +18,7 @@ document.getElementById("play").addEventListener("click", () => {
     isPlaying = true;
 }
 
-document.getElementById("stop").addEventListener("click",() => {
+document.getElementById("stop").addEventListener("click", function() {
     oscillator?.stop();
     isPLaying = false;
 }
