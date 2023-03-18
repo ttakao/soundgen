@@ -31,8 +31,8 @@
     </div>
   </div><!-- end of row -->
 <div class="row">
-      <button id="play" onclidk="playSound();">Play</button>
-      <button id="stop" onclick="stopSound();">Stop</button>
+      <button id="play">Play</button>
+      <button id="stop">Stop</button>
 </div><!-- end of row -->
   </div><!-- end of container -->
 </body>
@@ -42,7 +42,7 @@ const ctx = new AudioContext();
 var oscillator;
 var isPlaying = false; // during play, true
 
-function playSound(){
+document.getElementById("play").addEventListener("click", () => {
     if (isPlaying) return;
     oscillator = ctx.createOscillator();
     oscillator.type = "sin";
@@ -57,7 +57,7 @@ function playSound(){
     isPlaying = true;
 }
 
-function stopSound(){
+document.getElementById("stop").addEventListener("click",() => {
     oscillator?.stop();
     isPLaying = false;
 }
