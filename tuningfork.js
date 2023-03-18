@@ -16,9 +16,9 @@ document.getElementById("play").addEventListener("click", function() {
     oscillator.connect(ctx.destination);
     oscilator.start();
     isPlaying = true;
-}
+});
 
 document.getElementById("stop").addEventListener("click", function() {
     oscillator?.stop();
     isPLaying = false;
-}
+});
