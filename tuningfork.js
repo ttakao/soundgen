@@ -3,7 +3,10 @@ const ctx = new AudioContext();
 var oscillator;
 var isPlaying = false; // during play, true
 
-document.getElementById("play").addEventListener("click", function() {
+document.getElementById("play").addEventListener("click", playSound);
+document.getElementById("stop").addEventListener("click", stopSound);
+                                                 
+function playSound() {
     if (isPlaying) return;
     oscillator = ctx.createOscillator();
     oscillator.type = "sin";
@@ -16,9 +19,9 @@ document.getElementById("play").addEventListener("click", function() {
     oscillator.connect(ctx.destination);
     oscilator.start();
     isPlaying = true;
-});
+}
 
-document.getElementById("stop").addEventListener("click", function() {
+function stopSound() {
     oscillator?.stop();
     isPLaying = false;
-});
+}
