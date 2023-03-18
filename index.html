@@ -10,6 +10,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
   <!-- Milligram CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
+  <style>
+    body{
+      padding:20px;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
@@ -22,12 +27,12 @@
     <div class="row">
 <div class="column column-40">
     <label for="freq">Frequency:</label>
-    <input type="number" inputmode="numeric" id="freq" name="freq" required>Hz
+    <input type="number" inputmode="numeric" id="freq" required>Hz
     </div>
   </div><!-- end of row -->
 <div class="row">
-      <button id="play" name="play" onclidk="playSound();">Play</button>
-      <button id="stop" name="stop" onclick="stopSound();">Stop</button>
+      <button id="play" onclidk="playSound();">Play</button>
+      <button id="stop" onclick="stopSound();">Stop</button>
 </div><!-- end of row -->
   </div><!-- end of container -->
 </body>
