@@ -17,3 +17,8 @@ document.getElementById("play").addEventListener("click", () => {
     oscilator.start();
     isPlaying = true;
 }
+
+document.getElementById("stop").addEventListener("click",() => {
+    oscillator?.stop();
+    isPLaying = false;
+}
