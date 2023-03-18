@@ -7,7 +7,7 @@ document.getElementById("play").addEventListener("click", () => {
     if (isPlaying) return;
     oscillator = ctx.createOscillator();
     oscillator.type = "sin";
-    
+    alert("1");
     var freqText = document.getElementById("freq").value;
     
     var freqNumber = Number(freqText);
