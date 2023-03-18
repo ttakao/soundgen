@@ -8,12 +8,13 @@ document.getElementById("stop").addEventListener("click", stopSound);
                                                  
 function playSound() {
     if (isPlaying) return;
-    oscillator = ctx.createOscillator();
+    oscillator = ctx.createOscillator(); // oscillator must be made by each play.
   
-    var freqText = document.getElementById("freq").value;
+    var freqText = document.getElementById("freq").value; // get desired frequency.
     if (freqText == "") return;
+    var freqNumber = Number(freqText);
 
-    const waveforms = waveform;
+    const waveforms = document.getElementsByName("waveform"); // get desired waveform.
     for (var i=0; i < waveforms.length; i++){
       if (waveforms[i].checked) {
          oscillator.type = waveforms[i].value;
@@ -22,7 +23,6 @@ function playSound() {
       }     
     }
   
-    var freqNumber = Number(freqText);
     oscillator.frequency.setValueAtTime(freqNumber, ctx.currentTime);
     oscillator.connect(ctx.destination);
     oscillator.start();
