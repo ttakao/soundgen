@@ -21,7 +21,6 @@ function playSound() {
          break;
       }     
     }
-
   
     var freqNumber = Number(freqText);
     oscillator.frequency.setValueAtTime(freqNumber, ctx.currentTime);
@@ -31,6 +30,8 @@ function playSound() {
 }
 
 function stopSound() {
-    oscillator?.stop();
-    isPLaying = false;
+    if (isPlayng){
+      oscillator.stop();
+      isPLaying = false;
+    }
 }
