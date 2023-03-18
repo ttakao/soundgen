@@ -11,37 +11,36 @@
   <!-- Milligram CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
   <style>
-    body{
+    .container{
       padding:20px;
     }
   </style>
 </head>
 <body>
-  <div class="container">
+<div class="container">
   <div class="row">
     <h1>Electrical Tuning Fork</h1>
-    </div>
-<div class="row">
+  </div><!-- end of row -->
+  <div class="row">
     <P style="color:red;">!Make sure your Volume level.</P>
-</div><!-- end of row -->
-<div class="row">
-  <div class="column column-20">
+  </div><!-- end of row -->
+  <div class="row">
      <label for="freq">Frequency:</label>
-     <div class="column column-10#>
+     <div class="column column-10">
          <input type="number" inputmode="numeric" min="0" id="freq" required>
      </div>
      <div class="column">Hz</div>
-</div><!-- end of row -->
-<div class="row">
-  <input type="radio" name="waveform" value="sine" Checked>Sine
-  <input type="radio" name="waveform" value="square">Square
-  <Input type="radio" name="waveform" value="triangle">Triangle
-</div><!-- end row -->
-<div class="row"><br/></div>
-<div class="row">
-      <button id="play">Play</button>
-      <button id="stop">Stop</button>
-</div><!-- end of row -->
+   </div><!-- end of row -->
+   <div class="row">
+      <input type="radio" name="waveform" value="sine" Checked>Sine
+      <input type="radio" name="waveform" value="square">Square
+      <Input type="radio" name="waveform" value="triangle">Triangle
+    </div><!-- end row -->
+    <div class="row"><br/></div>
+    <div class="row">
+      <div class="column column-10"><button id="play">Play</button></div>
+      <div class="column column-10"><button id="stop">Stop</button></div>
+    </div><!-- end of row -->
   </div><!-- end of container -->
 </body>
 <script src="./tuningfork.js"></script>
