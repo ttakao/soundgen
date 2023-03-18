@@ -10,14 +10,13 @@ function playSound() {
     if (isPlaying) return;
     oscillator = ctx.createOscillator();
     oscillator.type = "sin";
-    alert("1");
     var freqText = document.getElementById("freq").value;
-    
+    if (freqText == "") return;
+  
     var freqNumber = Number(freqText);
-    alert(freqNumber);       
     oscillator.frequency.setValueAtTime(freqNumber, ctx.currentTime);
     oscillator.connect(ctx.destination);
-    oscilator.start();
+    oscillator.start();
     isPlaying = true;
 }
 
