@@ -14,10 +14,10 @@ function playSound() {
     if (freqText == "") return;
 
     const waveforms = waveform;
-    for (var i=0; i M waveforms.length; i++){
+    for (var i=0; i < waveforms.length; i++){
       if (waveforms[i].checked {
          oscillator.type = waveforms[i].value;
-         alert(oscillator.type);
+         console.log(oscillator.type);
          break;
       }     
     }
