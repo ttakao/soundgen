@@ -4,6 +4,12 @@
   <title>Tuning Fork</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+  <!-- CSS Reset -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+  <!-- Milligram CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
 </head>
 <body>
 <h1>Sound Generator</h1>
@@ -11,7 +17,7 @@
 <form>
 <div id="input_freq">
 <label for="freq">Frequency:</label>
-<input type="number" inputmode="numeric" pattern="^([0-9]{,6})$" id="freq" name="freq" required>Hz
+<input type="number" inputmode="numeric" id="freq" name="freq" required>Hz
 
 </div>
 <button id="play" name="play" onclidk="playSound();">Play</button>
@@ -19,11 +25,10 @@
 </form>
 </body>
 <script>
-Window.AUdioContext = window.AudioContext || window.webkitAudioContext;
+Window.AudioContext = window.AudioContext || window.webkitAudioContext;
 const ctx = new AudioContext();
-let oscillator;
-// During play, true
-let isPlaying = false;
+var oscillator;
+var isPlaying = false; // during play, true
 
 function playSound(){
     if (isPlaying) return;
@@ -33,7 +38,7 @@ function playSound(){
     var freqText = document.getElementById("freq").value;
     
     var freqNumber = Number(freqText);
-         
+    alert(freqNumber);       
     oscillator.frequency.setValueAtTime(freqNumber, ctx.currentTime);
     oscillator.connect(ctx.destination);
     oscilator.start();
