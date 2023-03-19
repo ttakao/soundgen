@@ -10,40 +10,43 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
   <!-- Milligram CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
-  <style>
-    .container{
-      padding:20px;
-    }
+<style>
+@media (min-width: 40.0rem){
     #freq{
-      width: 80px;
+       width: auto;
     }
-  </style>
+}
+@media (min-width: 80.0rem){
+   #freq{
+     width: auto;
+   }
+}
+@media (min-width: 120.0rem){
+   #freq{
+     width: 80px;
+   }
+}
+</style>
 </head>
 <body>
 <div class="container">
-  <div class="row">
     <h1>Electrical Tuning Fork</h1>
-  </div><!-- end of row -->
-  <div class="row">
     <P style="color:red; font-weight: bold;">!Make sure your Volume level.</P>
-  </div><!-- end of row -->
+  <fieldset>
   <div class="row">
-     <label for="freq">Frequency:</label>
-     <div class="column column-10">
+     <label for="freq">Frequency(Hz):</label>
          <input type="number" inputmode="numeric" min="0" id="freq" required>
-     </div>
-     <div class="column">Hz</div>
-   </div><!-- end of row -->
-   <div class="row">
+  </div>
+  <div class="row">
       <input type="radio" name="waveform" value="sine" Checked>Sine
       <input type="radio" name="waveform" value="square">Square
       <Input type="radio" name="waveform" value="triangle">Triangle
-    </div><!-- end row -->
-    <div class="row"><br/></div>
-    <div class="row">
+  </div>
+  <div class="row">
       <div class="column column-10"><button id="play">Play</button></div>
       <div class="column column-10"><button id="stop">Stop</button></div>
-    </div><!-- end of row -->
+  </div>
+  </fieldset>
   </div><!-- end of container -->
 </body>
 <script src="./tuningfork.js"></script>
