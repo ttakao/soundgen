@@ -5,6 +5,8 @@ Available browser, please check https://caniuse.com/audio-api
 This project is very simple.
 But this program brings many bnefit for meditator, Spitual Workers and music creators.
 
+I use Milligram CSS CDN for cosmetics.
+
 You can try NOW. 
 https://ttakao.github.io/tuningfork/
 
